@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -25,6 +26,9 @@ class OrdersDataTable extends DataTable
             ->addColumn('created_at', function ($query) {
                 return $query->created_at->format('d M Y');
             })
+            ->addColumn('date', function ($query) {
+                return Carbon::parse($query->date)->format('d M Y');
+            })
             ->addColumn('action', 'orders.action')
             ->setRowId('id');
     }
@@ -34,7 +38,7 @@ class OrdersDataTable extends DataTable
      */
     public function query(Order $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->orderBy('created_at', 'DESC')->newQuery();
     }
 
     /**

@@ -12,6 +12,9 @@
     <!-- Datatables -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/datatables/datatables.min.css') }}">
 
+    {{-- Select2 --}}
+    <link rel="stylesheet" href="{{ asset('assets/vendor/select2/css/select2.min.css') }}">
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -35,11 +38,16 @@
         </div>
     </div>
 
+    <div class="ajax-loading"></div>
+
     <!-- jQuery -->
     <script src="{{ asset('assets/vendor/jquery/jquery-3.6.3.min.js') }}"></script>
 
     <!-- Datatables -->
     <script src="{{ asset('assets/vendor/datatables/datatables.min.js') }}"></script>
+
+    {{-- Select2 --}}
+    <script src="{{ asset('assets/vendor/select2/js/select2.min.js') }}"></script>
 
     @stack('js')
 </body>

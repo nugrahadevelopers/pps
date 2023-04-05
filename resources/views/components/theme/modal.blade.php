@@ -1,8 +1,12 @@
-@props(['modalOpenBtnLabel', 'modalOpenBtnIcon', 'modalTitle', 'modalSubTitle'])
+@props(['modalOpenBtnLabel', 'modalOpenBtnIcon', 'modalTitle', 'modalSubTitle', 'customColor'])
+
+@php
+    $classes = $customColor ?? 'space-x-2 bg-sky-600 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:bg-sky-700 hover:bg-sky-600 focus:outline-none focus:bg-sky-600 focus:ring focus:ring-sky-300 focus:ring-opacity-50';
+@endphp
 
 <div x-data="{ modelOpen: false }">
     <button @click="modelOpen =!modelOpen"
-        {{ $attributes->merge(['class' => 'flex items-center justify-center px-3 py-2 space-x-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-sky-600 rounded-md dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:bg-sky-700 hover:bg-sky-600 focus:outline-none focus:bg-sky-600 focus:ring focus:ring-sky-300 focus:ring-opacity-50']) }}>
+        {{ $attributes->merge(['class' => 'flex items-center justify-center px-3 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform rounded-md ' . $classes]) }}>
         <i class="{{ $modalOpenBtnIcon ?? 'fa-solid fa-square-plus' }}"></i>
 
         <span>{{ $modalOpenBtnLabel ?? '' }}</span>

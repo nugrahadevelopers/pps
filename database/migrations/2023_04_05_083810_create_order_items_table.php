@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('price', 64, 0);
             $table->decimal('discount', 64, 0);
             $table->decimal('total', 64, 0);
-            $table->string('note', 64, 0);
+            $table->string('note');
             $table->timestamps();
         });
 

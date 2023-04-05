@@ -1,7 +1,10 @@
-@import url("../assets/vendors/fontawesome/css/fontawesome.min.css");
-@import url("../assets/vendors/fontawesome/css/regular.min.css");
-@import url("../assets/vendors/fontawesome/css/solid.min.css");
-@import url("../assets/vendors/fontawesome/css/brands.min.css");
+@import "../assets/vendors/fontawesome/css/fontawesome.min.css";
+@import "../assets/vendors/fontawesome/css/regular.min.css";
+@import "../assets/vendors/fontawesome/css/solid.min.css";
+@import "../assets/vendors/fontawesome/css/brands.min.css";
+
+@import "datatables-tailwind.css";
+@import "select2-tailwind.css";
 
 @tailwind base;
 @tailwind components;
@@ -10,80 +13,23 @@
     @apply transition-colors duration-300;
 }
 
-.dataTables_wrapper .dataTables_length select {
-    @apply !w-[3.8rem] !pl-2 !bg-[right_0.3rem_center] focus:outline-none;
+.ajax-loading {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8) url("/public/assets/images/default-loading.gif") 50% 50% no-repeat;
 }
 
-.dataTables_wrapper .dataTables_length select option {
-    @apply bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none;
+body.loading .ajax-loading {
+    overflow: hidden;
 }
 
-table.dataTable {
-    @apply !border !border-t-[1.5px] !border-b-[1.5px] !border-gray-300 my-4 rounded overflow-hidden;
-}
-
-table.dataTable thead th,
-table.dataTable thead td {
-    @apply !border-b-[2.5px] !border-l !border-gray-200;
-}
-
-table.dataTable tbody tr,
-table.dataTable tbody td {
-    @apply !bg-white border-l border-b;
-}
-
-.dataTables_wrapper .dataTables_filter {
-    @apply mb-6;
-}
-
-.dataTables_wrapper .dataTables_length,
-.dataTables_wrapper .dataTables_filter,
-.dataTables_wrapper .dataTables_info,
-.dataTables_wrapper .dataTables_processing,
-.dataTables_wrapper .dataTables_paginate {
-    @apply text-sm;
-}
-
-table.dataTable thead > tr > th.sorting::before,
-table.dataTable thead > tr > th.sorting_asc::before,
-table.dataTable thead > tr > th.sorting_desc::before,
-table.dataTable thead > tr > th.sorting_asc_disabled::before,
-table.dataTable thead > tr > th.sorting_desc_disabled::before,
-table.dataTable thead > tr > td.sorting::before,
-table.dataTable thead > tr > td.sorting_asc::before,
-table.dataTable thead > tr > td.sorting_desc::before,
-table.dataTable thead > tr > td.sorting_asc_disabled::before,
-table.dataTable thead > tr > td.sorting_desc_disabled::before {
-    @apply right-4 content-['↑'];
-}
-
-table.dataTable thead > tr > th.sorting::after,
-table.dataTable thead > tr > th.sorting_asc::after,
-table.dataTable thead > tr > th.sorting_desc::after,
-table.dataTable thead > tr > th.sorting_asc_disabled::after,
-table.dataTable thead > tr > th.sorting_desc_disabled::after,
-table.dataTable thead > tr > td.sorting::after,
-table.dataTable thead > tr > td.sorting_asc::after,
-table.dataTable thead > tr > td.sorting_desc::after,
-table.dataTable thead > tr > td.sorting_asc_disabled::after,
-table.dataTable thead > tr > td.sorting_desc_disabled::after {
-    @apply right-2 content-['↓'];
-}
-
-.dataTables_wrapper .dataTables_paginate {
-    @apply border border-gray-300 p-0 rounded;
-}
-
-/* .dataTables_wrapper .dataTables_paginate .paginate_button {
-    @apply p-0;
-} */
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current {
-    @apply bg-sky-600 !text-white border border-sky-600 rounded-none;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    @apply bg-sky-700 !text-white border border-sky-700 rounded-none;
+body.loading .ajax-loading {
+    display: block;
 }
 
 @tailwind utilities;

@@ -3,19 +3,25 @@
 namespace App\Http\Controllers\Panel\Admin\Transaction;
 
 use App\Http\Controllers\Controller;
-use App\Models\Customer;
-use App\Models\Item;
+use App\Services\Transaction\Sales\CreateOrderService;
+use App\Services\Transaction\Sales\GenerateOrderCodeService;
 use Illuminate\Http\Request;
 
 class TransactionSalesController extends Controller
 {
-    public function index()
+    public function index(GenerateOrderCodeService $generateOrderCodeService)
     {
-        $customers = Customer::orderBy('created_at', 'DESC')->get();
-        $items = Item::orderBy('created_at', 'DESC')->get();
         return view('pages.panel.admin.transaction.sales.index', [
-            'customers' => $customers,
-            'items' => $items,
+            "order_code" => $generateOrderCodeService->generate()
+        ]);
+    }
+
+    public function saveTransaction(Request $request, CreateOrderService $createOrderService)
+    {
+        $createOrderService->create($request->all());
+        return response()->json([
+            'success' => true,
+            'message' => 'Transaksi berhasil disimpan.',
         ]);
     }
 }

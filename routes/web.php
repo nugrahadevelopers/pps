@@ -9,6 +9,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
     require __DIR__ . '/pages/panel/admin/dashboard.php';
     require __DIR__ . '/pages/panel/admin/transaction.php';
+    require __DIR__ . '/pages/panel/admin/cart.php';
     require __DIR__ . '/pages/panel/admin/customer.php';
     require __DIR__ . '/pages/panel/admin/category-item.php';
     require __DIR__ . '/pages/panel/admin/item.php';

@@ -1,5 +1,5 @@
 <x-theme.modal modalTitle="Hapus Pelanggan" modalOpenBtnIcon="fa-regular fa-trash-can"
-    class="space-x-0 bg-rose-500 hover:bg-rose-600 text-sm text-rose-950">
+    customColor="space-x-0 bg-rose-500 hover:bg-rose-600 text-sm text-rose-950">
     <form action="{{ route('panel.admin.items.destroy', $item) }}" method="POST" class="mt-5">
         @csrf
         @method('DELETE')

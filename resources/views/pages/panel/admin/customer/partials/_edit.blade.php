@@ -1,5 +1,5 @@
 <x-theme.modal modalTitle="Edit Pelanggan" modalOpenBtnIcon="fa-regular fa-pen-to-square"
-    class="space-x-0 bg-yellow-400 hover:bg-yellow-500 text-yellow-50">
+    customColor="space-x-0 bg-yellow-400 hover:bg-yellow-500 text-yellow-50">
     <form action="{{ route('panel.admin.customers.update', $customer) }}" method="POST" class="mt-5">
         @csrf
         @method('PUT')
