@@ -1,0 +1,206 @@
+@import url("../assets/vendors/fontawesome/css/fontawesome.min.css");
+@import url("../assets/vendors/fontawesome/css/regular.min.css");
+@import url("../assets/vendors/fontawesome/css/solid.min.css");
+@import url("../assets/vendors/fontawesome/css/brands.min.css");
+
+@tailwind base;
+@tailwind components;
+
+* {
+    @apply transition-colors duration-300;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    @apply !w-[3.8rem] !pl-2 !bg-[right_0.3rem_center] focus:outline-none;
+}
+
+.dataTables_wrapper .dataTables_length select option {
+    @apply bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none;
+}
+
+table.dataTable {
+    @apply !border !border-t-[1.5px] !border-b-[1.5px] !border-gray-300 my-4 rounded overflow-hidden;
+}
+
+table.dataTable thead th,
+table.dataTable thead td {
+    @apply !border-b-[2.5px] !border-l !border-gray-200;
+}
+
+table.dataTable tbody tr,
+table.dataTable tbody td {
+    @apply !bg-white border-l border-b;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    @apply mb-6;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    @apply text-sm;
+}
+
+table.dataTable thead > tr > th.sorting::before,
+table.dataTable thead > tr > th.sorting_asc::before,
+table.dataTable thead > tr > th.sorting_desc::before,
+table.dataTable thead > tr > th.sorting_asc_disabled::before,
+table.dataTable thead > tr > th.sorting_desc_disabled::before,
+table.dataTable thead > tr > td.sorting::before,
+table.dataTable thead > tr > td.sorting_asc::before,
+table.dataTable thead > tr > td.sorting_desc::before,
+table.dataTable thead > tr > td.sorting_asc_disabled::before,
+table.dataTable thead > tr > td.sorting_desc_disabled::before {
+    @apply right-4 content-['↑'];
+}
+
+table.dataTable thead > tr > th.sorting::after,
+table.dataTable thead > tr > th.sorting_asc::after,
+table.dataTable thead > tr > th.sorting_desc::after,
+table.dataTable thead > tr > th.sorting_asc_disabled::after,
+table.dataTable thead > tr > th.sorting_desc_disabled::after,
+table.dataTable thead > tr > td.sorting::after,
+table.dataTable thead > tr > td.sorting_asc::after,
+table.dataTable thead > tr > td.sorting_desc::after,
+table.dataTable thead > tr > td.sorting_asc_disabled::after,
+table.dataTable thead > tr > td.sorting_desc_disabled::after {
+    @apply right-2 content-['↓'];
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    @apply border border-gray-300 p-0 rounded;
+}
+
+/* .dataTables_wrapper .dataTables_paginate .paginate_button {
+    @apply p-0;
+} */
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    @apply bg-sky-600 !text-white border border-sky-600 rounded-none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    @apply bg-sky-700 !text-white border border-sky-700 rounded-none;
+}
+
+@tailwind utilities;
+
+/* inter-100 - latin */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 100;
+    src: url("../assets/fonts/inter-v12-latin/inter-v12-latin-100.eot");
+    src: local(""), url("../assets/fonts/inter-v12-latin/inter-v12-latin-100.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-100.woff2") format("woff2"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-100.woff") format("woff"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-100.ttf") format("truetype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-100.svg#Inter") format("svg");
+}
+
+/* inter-200 - latin */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 200;
+    src: url("../assets/fonts/inter-v12-latin/inter-v12-latin-200.eot");
+    src: local(""), url("../assets/fonts/inter-v12-latin/inter-v12-latin-200.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-200.woff2") format("woff2"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-200.woff") format("woff"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-200.ttf") format("truetype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-200.svg#Inter") format("svg");
+}
+
+/* inter-300 - latin */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../assets/fonts/inter-v12-latin/inter-v12-latin-300.eot");
+    src: local(""), url("../assets/fonts/inter-v12-latin/inter-v12-latin-300.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-300.woff2") format("woff2"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-300.woff") format("woff"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-300.ttf") format("truetype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-300.svg#Inter") format("svg");
+}
+
+/* inter-regular - latin */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../assets/fonts/inter-v12-latin/inter-v12-latin-regular.eot");
+    src: local(""), url("../assets/fonts/inter-v12-latin/inter-v12-latin-regular.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-regular.woff2") format("woff2"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-regular.woff") format("woff"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-regular.ttf") format("truetype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-regular.svg#Inter") format("svg");
+}
+
+/* inter-500 - latin */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../assets/fonts/inter-v12-latin/inter-v12-latin-500.eot");
+    src: local(""), url("../assets/fonts/inter-v12-latin/inter-v12-latin-500.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-500.woff2") format("woff2"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-500.woff") format("woff"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-500.ttf") format("truetype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-500.svg#Inter") format("svg");
+}
+
+/* inter-600 - latin */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../assets/fonts/inter-v12-latin/inter-v12-latin-600.eot");
+    src: local(""), url("../assets/fonts/inter-v12-latin/inter-v12-latin-600.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-600.woff2") format("woff2"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-600.woff") format("woff"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-600.ttf") format("truetype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-600.svg#Inter") format("svg");
+}
+
+/* inter-700 - latin */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../assets/fonts/inter-v12-latin/inter-v12-latin-700.eot");
+    src: local(""), url("../assets/fonts/inter-v12-latin/inter-v12-latin-700.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-700.woff2") format("woff2"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-700.woff") format("woff"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-700.ttf") format("truetype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-700.svg#Inter") format("svg");
+}
+
+/* inter-800 - latin */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../assets/fonts/inter-v12-latin/inter-v12-latin-800.eot");
+    src: local(""), url("../assets/fonts/inter-v12-latin/inter-v12-latin-800.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-800.woff2") format("woff2"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-800.woff") format("woff"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-800.ttf") format("truetype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-800.svg#Inter") format("svg");
+}
+
+/* inter-900 - latin */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../assets/fonts/inter-v12-latin/inter-v12-latin-900.eot");
+    src: local(""), url("../assets/fonts/inter-v12-latin/inter-v12-latin-900.eot?#iefix") format("embedded-opentype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-900.woff2") format("woff2"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-900.woff") format("woff"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-900.ttf") format("truetype"),
+        url("../assets/fonts/inter-v12-latin/inter-v12-latin-900.svg#Inter") format("svg");
+}
