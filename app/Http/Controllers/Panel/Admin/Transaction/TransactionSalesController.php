@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 
 class TransactionSalesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['permission:sales_transaction_show'])->only('index');
+        $this->middleware(['permission:sales_transaction_create'])->only('saveTransaction');
+    }
+
     public function index(GenerateOrderCodeService $generateOrderCodeService)
     {
         return view('pages.panel.admin.transaction.sales.index', [

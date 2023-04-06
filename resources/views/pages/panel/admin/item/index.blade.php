@@ -1,9 +1,11 @@
 <x-app-layout breadCrumbsName="item">
     <x-slot name="title">{{ __('item_module.page_title') }}</x-slot>
     <x-theme.container>
-        <div class="flex items-center justify-end">
-            @include('pages.panel.admin.item.partials._create')
-        </div>
+        @can('item_create')
+            <div class="flex items-center justify-end">
+                @include('pages.panel.admin.item.partials._create')
+            </div>
+        @endcan
 
         <!-- Session Status -->
         <x-theme.session-status class="mt-5 p-2 bg-sky-400 text-white rounded" :status="session('status')" />

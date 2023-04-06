@@ -29,7 +29,11 @@ class OrdersDataTable extends DataTable
             ->addColumn('date', function ($query) {
                 return Carbon::parse($query->date)->format('d M Y');
             })
-            ->addColumn('action', 'orders.action')
+            ->addColumn('action', function ($query) {
+                return view('pages.panel.admin.transaction.invoice.partials._action', [
+                    'order' => $query
+                ]);
+            })
             ->setRowId('id');
     }
 
@@ -38,7 +42,7 @@ class OrdersDataTable extends DataTable
      */
     public function query(Order $model): QueryBuilder
     {
-        return $model->orderBy('created_at', 'DESC')->newQuery();
+        return $model->with('orderItems')->orderBy('created_at', 'DESC')->newQuery();
     }
 
     /**
